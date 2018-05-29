@@ -3,6 +3,7 @@ import random
 import math
 
 def miller_rabin(n, k):
+
     if n == 2 or n % 2 == 0:
         return True
     if not n & 1:
@@ -53,18 +54,15 @@ while True:
         
 n = input("input number: ")
 e = input("input error rate : ")
+k = math.log(e,0.25)
 
-while True:
+if miller_rabin(n, int(k)):
+    print (str(n) + " is not prime numbers ")
+else: 
+    print (str(n) + " is prime numbers ") 
 
-    if miller_rabin(n, int(k)): continue
-    else: 
-        print (str(n) + " is prime numbers ") 
-        break
 
-# if miller_rabin(n, int(k)):
-    # print (str(n) + " is not prime numbers ")
-# else:
-    # print (str(n) + " is prime numbers ")
+
     
     
 
